@@ -2,7 +2,7 @@
 
 A deep learning project for detecting and classifying student engagement levels using multimodal data (video scenes, facial expressions, and audio) from the DAiSEE dataset.
 
-## 📋 Project Overview
+## Project Overview
 
 This project implements a state-of-the-art multimodal engagement classifier that processes:
 - **Face crops** - Facial expressions and head movements
@@ -84,7 +84,7 @@ evaluate_test()
 
 Evaluates the best model on test set and reports loss and accuracy.
 
-## 📊 Dataset Structure
+## Dataset Structure
 
 ```
 DAiSEE/
@@ -100,7 +100,7 @@ DAiSEE/
 
 Each label CSV contains: `ClipID`, `Engagement` (0-3), and other optional fields.
 
-## 🔧 Implementation Details
+## Implementation Details
 
 ### Video Processing
 - Face detection: MTCNN with margin=20
@@ -130,7 +130,7 @@ After training, the following files are saved:
 - `full_checkpoint.pt` - Complete training state + config
 - `config.json` - Hyperparameters in JSON format
 
-## 🎯 Model Specifications
+## Model Specifications
 
 | Parameter | Value |
 |-----------|-------|
@@ -142,14 +142,14 @@ After training, the following files are saved:
 | Batch Size | 8 |
 | Total Trainable Params | ~88M+ |
 
-## 💾 Memory & Performance
+## Memory & Performance
 
 - **GPU Memory**: ~8-12GB (with batch_size=8)
 - **Cache Size**: ~2-5GB for full dataset
 - **Training Time**: ~2-4 hours per epoch (single GPU)
 - **Inference Speed**: ~50-100ms per clip
 
-## 🔍 Troubleshooting
+## Troubleshooting
 
 ### CUDA Out of Memory
 - Reduce `BATCH_SIZE`
@@ -165,20 +165,12 @@ After training, the following files are saved:
 - Install FFmpeg: `apt-get install ffmpeg` (Linux) or download from ffmpeg.org
 - Check video file integrity
 
-## 📝 Notebooks
+## Notebooks
 
 - **CV-1(0.5).ipynb** - Complete training pipeline with all components
-- **CV-2(0.6).ipynb** - Alternative approaches or extended analysis
+- **CV-2(0.6).ipynb** - Alternative approaches and extended analysis (needs 24-36 hours)
 
-## 🤝 Contributing
-
-Modifications and extensions welcome:
-- Add new encoder architectures
-- Experiment with different temporal models
-- Implement advanced augmentation strategies
-- Extend to other engagement-related tasks
-
-## 📚 References
+## References
 
 - DAiSEE Dataset: [Kaggle Dataset](https://www.kaggle.com/datasets/olgaparfenova/daisee)
 - EfficientNet: [Paper](https://arxiv.org/abs/1905.11946)
